@@ -4,6 +4,7 @@ This is an experiment in building a large-language-model-backed chatbot. It can 
 
 This app relies on the amazing [LangChain Python library](https://langchain.readthedocs.io/en/latest/index.html), which powers all the interesting AI stuff.
 
+
 ## Running locally
 
 First, add your API keys in the `.env` file.
@@ -13,6 +14,39 @@ Then, install the Python requirements and start the app. You'll want a Procfile 
 ```
 pip install -r requirements.txt
 foreman start -f Procfile.local
+```
+
+Once it's running, open up [http://127.0.0.1:9000/](http://127.0.0.1:9000/) and you'll be able to start interacting with the bot. There's also a writing assistant endpoint at [http://127.0.0.1:9000/write](http://127.0.0.1:9000/write).
+
+
+## Running in Gitpod
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/xingh/iris)
+
+First, add your API keys in the `.env` file.
+
+Then, install the Python requirements and start the app. You can use a Procfile manager like [Foreman](https://github.com/ddollar/foreman) or [Hivemind](https://github.com/DarthSim/hivemind) installed. My prerence was to keep it with the Python theme. [Honcho](https://github.com/nickstenning/honcho) is a tool that does the same thing. 
+
+I preppedd the Gitpod this way, but also have added it to the .gitpod.yml
+```
+pyenv install 3.9
+pyenv local 3.9
+pip install --upgrade pip
+pip install honcho 
+```
+
+To fix node/vite issues
+```
+rm -rf node_modules
+cd vite
+rm -rf node_modules
+rm -rf dist/assets/*
+npm install -g vite
+```
+
+```
+pip install -r requirements.txt
+honcho start -f Procfile.local
 ```
 
 Once it's running, open up [http://127.0.0.1:9000/](http://127.0.0.1:9000/) and you'll be able to start interacting with the bot. There's also a writing assistant endpoint at [http://127.0.0.1:9000/write](http://127.0.0.1:9000/write).
