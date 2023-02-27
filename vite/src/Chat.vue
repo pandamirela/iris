@@ -346,11 +346,11 @@ export default {
       <h1 class="ui page header">
         <a href="/">
           <span class="emoji">
-            <em :data-emoji="shruggingType" class="medium"></em>
+            <em :data-emoji="shoulders" class="medium"></em>
             <!-- <em data-emoji="shoulders" class="medium"></em> -->
           </span>
 
-          <span class="text">howdoi.ai </span>
+          <span class="text">Iris.io</span>
         </a>
       </h1>
 

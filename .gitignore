@@ -7,6 +7,8 @@ __pycache__
 .ruby-version
 /vite/dist/assets
 vite/dist/assets
+/vite/dist/*.html
+vite/dist/*.html
 *node_modules*
 node_modules
 /vite/node_modules

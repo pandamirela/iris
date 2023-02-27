@@ -1,9 +1,26 @@
-# HowdoI.ai is a helpful chatbot that can answer questions
+# Iris (fork of HowdoI.ai) is a reference implementation of a data augmented generative AI.
 
 This is an experiment in building a large-language-model-backed chatbot. It can hold a conversation, remember previous comments/questions, and answer all types of queries (history, web search, movie data, weather, news, and more).
 
 This app relies on the amazing [LangChain Python library](https://langchain.readthedocs.io/en/latest/index.html), which powers all the interesting AI stuff.
 
+
+## Getting API Keys 
+
+For those who want to use this to it's fullest ability you'll need to get API keys.
+
+| Key Name  |  Where to Get It | Works?  |
+|-----------|------------------|---------|
+| OPENAI_API_KEY | https://openai.com | Yes |
+| SERPAPI_API_KEY | https://serpapi.com/ | Yes |
+| GIPHY_API_KEY | | Todo |
+| NEWS_API_KEY | https://newsapi.org | Testing |
+| TMDB_API_KEY | https://www.themoviedb.org/settings/api | Testing |
+| WOLFRAM_ALPHA_APPID https://products.wolframalpha.com/api | Testing |
+| GOOGLE_API_KEY https://console.cloud.google.com/apis/credentials | Todo |
+| GOOGLE_CSE_ID | ??? | Todo
+
+More on GOOGLE (in General) https://stackoverflow.com/questions/37083058/programmatically-searching-google-in-python-using-custom-search
 
 ## Running locally
 
