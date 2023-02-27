@@ -13,9 +13,9 @@ For those who want to use this to it's fullest ability you'll need to get API ke
 |-----------|------------------|---------|
 | OPENAI_API_KEY | https://openai.com | Yes |
 | SERPAPI_API_KEY | https://serpapi.com/ | Yes |
-| GIPHY_API_KEY | | Todo |
-| NEWS_API_KEY | https://newsapi.org | Testing |
-| TMDB_API_KEY | https://www.themoviedb.org/settings/api | Testing |
+| GIPHY_API_KEY | https://developers.giphy.com/ | Testing |
+| NEWS_API_KEY | https://newsapi.org | Yes |
+| TMDB_API_KEY | https://www.themoviedb.org/settings/api | Yes |
 | WOLFRAM_ALPHA_APPID | https://products.wolframalpha.com/api | Testing |
 | GOOGLE_API_KEY | https://console.cloud.google.com/apis/credentials | Todo |
 | GOOGLE_CSE_ID | ??? | Todo
