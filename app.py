@@ -110,8 +110,8 @@ Thought:
         input_variables=["input", "instruction", "operation"],
     )
 
-    chain = LLMChain(llm=llm, prompt=similar_prompt, verbose=True)
-    # chain = LLMChain(llm=llm, prompt=zero_shot_prompt, verbose=True)
+    # chain = LLMChain(llm=llm, prompt=similar_prompt, verbose=True)
+    chain = LLMChain(llm=llm, prompt=zero_shot_prompt, verbose=True)
 
     # add a try except block to catch errors
     try:
@@ -187,6 +187,7 @@ def chat():
     sys.stdout.flush()
     return {
         'input': input,
-        'text': reply.strip(),
+        # 'text': reply.strip(),
+        'text': reply,
         'language': language
     }

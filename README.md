@@ -68,6 +68,18 @@ honcho start -f Procfile.local
 
 Once it's running, open up [http://127.0.0.1:9000/](http://127.0.0.1:9000/) and you'll be able to start interacting with the bot. There's also a writing assistant endpoint at [http://127.0.0.1:9000/write](http://127.0.0.1:9000/write).
 
+## API Endpoint
+
+The api endpoint will be up at `http://<hostname>/chat` and you can send data to it like this. Replace with the loopback address (127.0.0.1) if you are doing it locally or in gitpod, or the full gitpod preview / API url otherwise. 
+
+```
+curl -X POST http://<hostname>/chat \
+   -H "Content-Type: application/json" \
+   -d '{"prompt":"Show me a cat gif","model":"text-davinci-003","temperature":0.5, "max_tokens":512,"history":[]}'  
+
+```
+
+
 ## Example prompts
 
 ### Conversation with memory

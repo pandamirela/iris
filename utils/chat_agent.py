@@ -60,6 +60,7 @@ class ChatAgent:
                 llm=OpenAI(temperature=0),
                 prompt=PROMPT)).run(input)
             return out.strip()
+            # return out
         return lambda_func
 
     def __init__(self, *, conversation_chain: LLMChain = None, history_array):
