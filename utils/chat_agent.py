@@ -87,7 +87,7 @@ class ChatAgent:
 
         tools = load_tools(tool_names,
                            llm=OpenAI(temperature=0,
-                                      model_name="text-davinci-003"),
+                                      model_name="text-davinci-002"),
                            news_api_key=news_api_key,
                            tmdb_bearer_token=tmdb_bearer_token)
 
