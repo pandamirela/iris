@@ -3,6 +3,7 @@
 """
 import os
 from utils.giphy import GiphyAPIWrapper
+from utils.foursquare import FoursquareAPIWrapper
 from dataclasses import dataclass
 
 from langchain.chains import LLMChain, LLMRequestsChain
@@ -70,6 +71,7 @@ class ChatAgent:
         docstore_agent = self._get_docstore_agent()
 
         giphy = GiphyAPIWrapper()
+        foursquare = FoursquareAPIWrapper()
 
         tool_names = get_all_tool_names()
 
@@ -107,6 +109,16 @@ class ChatAgent:
                 func=giphy.run,
                 description="useful for when you need to find a gif or picture, and for adding humor to your replies. Input should be a query, and output will be an html embed code which you MUST include in your Final Answer."
             ),
+            Tool(
+                name="FoursquareSearch",
+                func=foursquare.run,
+                description="useful for when you need to find information about a location, place, venue. Input should be a query, and output will be JSON data which you should summarize and give back relevant information."
+            ),
+            Tool(
+                name="FoursquareNear",
+                func=foursquare.near,
+                description="useful for when you need to find information about a location, place, venue in a particular city, town, neighborhood. Input should be a a comma separated list of strings of length two, representing what you want to search for and where. For example, `coffee shops, chicago il` would be the input if you wanted to search for coffee shops in or near chicago, illinois and output will be JSON data which you should summarize and give back relevant information."
+            ),            
             Tool(
                 name="Requests",
                 func=requests_tool,

@@ -13,12 +13,13 @@ For those who want to use this to it's fullest ability you'll need to get API ke
 |-----------|------------------|---------|
 | OPENAI_API_KEY | https://openai.com | Yes |
 | SERPAPI_API_KEY | https://serpapi.com/ | Yes |
-| GIPHY_API_KEY | https://developers.giphy.com/ | Testing |
+| GIPHY_API_KEY | https://developers.giphy.com/ | Mostly |
 | NEWS_API_KEY | https://newsapi.org | Yes |
 | TMDB_API_KEY | https://www.themoviedb.org/settings/api | Yes |
-| WOLFRAM_ALPHA_APPID | https://products.wolframalpha.com/api | Testing |
+| WOLFRAM_ALPHA_APPID | https://products.wolframalpha.com/api | Yes |
 | GOOGLE_API_KEY | https://console.cloud.google.com/apis/credentials | Todo |
-| GOOGLE_CSE_ID | ??? | Todo
+| GOOGLE_CSE_ID | ??? | Todo |
+| FOURSQUARE_API_KEY | https://developer.foursquare.com | Yes |
 
 More on GOOGLE (in General) https://stackoverflow.com/questions/37083058/programmatically-searching-google-in-python-using-custom-search
 
