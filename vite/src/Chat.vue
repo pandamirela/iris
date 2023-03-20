@@ -35,9 +35,16 @@ export default {
       type: Boolean,
       default: import.meta.env.DEV,
     },
+    history: {
+      type: Object,
+      default: () => {
+        return {};
+      },
+    },
   },
   data() {
     let $this = this;
+    console.log($this.history);
     return {
       listening: false,
       speaking: false,
@@ -45,7 +52,7 @@ export default {
       recognition: null,
       focused: false,
       prompt: "",
-      prompts: $this.debug ? dummyPrompts : [],
+      prompts: $this.history.chat_history || $this.debug ? dummyPrompts : [],
       selectedPromptIndex: null,
       loading: false,
       placeholderIndex: 0,
@@ -243,6 +250,22 @@ export default {
       )}%0A%0A${encodeURIComponent(response)}%0Awww.howdoi.ai`;
       window.open(url, "_blank");
     },
+    save() {
+      fetch("/save", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          history: this.prompts,
+        }),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log("Success:", data);
+          window.history.pushState({}, "", `/chat/${data.id}`);
+        });
+    },
 
     scrollToBottom() {
       this.$nextTick(() => {
@@ -346,11 +369,11 @@ export default {
       <h1 class="ui page header">
         <a href="/">
           <span class="emoji">
-            <em :data-emoji="shoulders" class="medium"></em>
+            <em :data-emoji="shruggingType" class="medium"></em>
             <!-- <em data-emoji="shoulders" class="medium"></em> -->
           </span>
 
-          <span class="text">Iris.io</span>
+          <span class="text">iris.ai </span>
         </a>
       </h1>
 
@@ -459,6 +482,15 @@ export default {
       >
         <i class="icon undo"></i>
         Start over
+      </button>
+
+      <button
+        v-if="prompts.length > 0"
+        @click="save"
+        class="ui tertiary icon button"
+      >
+        <i class="icon save"></i>
+        Save
       </button>
     </div>
   </div>

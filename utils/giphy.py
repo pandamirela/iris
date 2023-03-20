@@ -89,7 +89,8 @@ class GiphyAPIWrapper(BaseModel):
         # raise Exception(api_response.data[0].embed_url)
         #url = api_response.data[0].url
         url = api_response.data[0].embed_url
-        return f"""Output: <img src="{url}" width="480" height="480">"""
+        return f"""<iframe src="{url}" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><br /><a href="{url}">powered by GIPHY</a>"""
+        # return f"""Output: <img src="{url}" width="480" height="480">"""
         # this doesn't work ... Iframe is not coming through , maybe Gitpod stripts it
         #url = api_response.data[0].embed_url
         #return f"""Output: <iframe src="{url}" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><br /><a href="{url}">powered by GIPHY</a>"""
