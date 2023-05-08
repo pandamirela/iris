@@ -43,7 +43,9 @@ class ChatAgent:
                 description="Lookup a wikipedia page"
             )
         ]
-        docstore_llm = OpenAI(temperature=0, model_name="text-davinci-003")
+        #docstore_llm = OpenAI(temperature=0, model_name="text-davinci-003")
+        # gpt-3.5-turbo is 1/10th the cost of text-davinci-003 https://platform.openai.com/docs/models/gpt-3-5
+        docstore_llm = OpenAI(temperature=0, model_name="gpt-3.5-turbo")
         docstore_agent = initialize_agent(
             docstore_tools, docstore_llm, agent="react-docstore", verbose=True)
         return docstore_agent
