@@ -88,7 +88,7 @@ class ChatAgent:
 
         tool_names = [
             'serpapi',
-            #'wolfram-alpha',
+            'wolfram-alpha',
             'llm-math',
             'open-meteo-api',
             'news-api',
@@ -101,7 +101,7 @@ class ChatAgent:
 
         tools = load_tools(tool_names,
                            llm=OpenAI(temperature=0,
-                                      model_name="text-davinci-002"),
+                                      model_name="gpt-3.5-turbo"),
                            news_api_key=news_api_key,
                            tmdb_bearer_token=tmdb_bearer_token)
 
@@ -178,7 +178,7 @@ New input: {{input}}
             memory.save_context(
                 {f"{ai_prefix}": item["prompt"]}, {f"{human_prefix}": item["response"]})
 
-        llm = OpenAI(temperature=.5, model_name="text-davinci-003")
+        llm = OpenAI(temperature=.5, model_name="gpt-3.5-turbo")
         llm_chain = LLMChain(
             llm=llm,
             prompt=ConversationalAgent.create_prompt(
