@@ -88,7 +88,7 @@ class ChatAgent:
 
         tool_names = [
             'serpapi',
-            'wolfram-alpha',
+            #'wolfram-alpha',
             'llm-math',
             'open-meteo-api',
             'news-api',

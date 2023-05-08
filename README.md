@@ -60,6 +60,8 @@ cd vite
 rm -rf node_modules
 rm -rf dist/assets/*
 npm install -g vite
+npm install
+yarn global add vite
 ```
 
 ```
